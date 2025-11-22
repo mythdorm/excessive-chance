@@ -6,20 +6,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p class="header">Excessive Chance Calculator</p>
+    <p class="header">Excessive Chance Simulator</p>
 
     <div class="options">
         <div class="dropdown">
-            <label for="options">Gamble with: </label><select id="options">
+            <label for="options">Gamble with: </label><select onchange="checkType(this)" id="options">
                 <option value="coins">Coins</option>
-                <option value="die">Die</option>
+                <option value="dice">Dice</option>
                 <option value="cards">Cards</option>
             </select>
         </div>
+        <div class="dropdown" id="secondary"></div>
         <div class="numbers">
             <label>
-                <input type="number" min="1">
                 Amount
+                <input id="count" type="number" min="1" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
             </label>
         </div>
         <div class="check">
@@ -28,7 +29,13 @@
                 Quick Animation
             </label>
         </div>
+        <div class="start">
+            <button class="confirm" onclick="gamble()">Gamble!</button>
+        </div>
     </div>
+    <div class="results" id="results"></div>
+
+
 </body>
 <script src="script.js"></script>
 </html>
