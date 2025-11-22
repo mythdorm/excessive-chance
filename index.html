@@ -20,18 +20,19 @@
         <div class="numbers">
             <label>
                 Amount
-                <input id="count" type="number" min="1" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                <input id="count" type="number" min="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
             </label>
         </div>
         <div class="check">
             <label>
-                <input type="checkbox">
-                Quick Animation
+                <input type="checkbox" onchange="animationChoice(this)" id="animation">
+                Skip Animation
             </label>
         </div>
         <div class="start">
             <button class="confirm" onclick="gamble()">Gamble!</button>
         </div>
+        <div id="resultCount"></div>
     </div>
     <div class="results" id="results"></div>
 
