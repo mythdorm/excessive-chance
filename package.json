@@ -1,0 +1,12 @@
+{
+  "name": "excessive-chance",
+  "description": "",
+  "version": "0.0.1",
+  "main": "script.js",
+  "scripts": {
+
+  },
+  "dependencies": {
+    "wrangler": "^4.50.0"
+  }
+}
